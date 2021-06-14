@@ -18,8 +18,10 @@
   &::after {
     content: "";
 
-    width: 10px;
-    height: 10px;
+    margin: 0 0 0 10px;
+
+    width: 8px;
+    height: 13px;
 
     background-image: url("../../img/icon/arrow-link.svg");
     background-size: contain;
