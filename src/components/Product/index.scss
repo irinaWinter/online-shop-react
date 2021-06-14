@@ -1,0 +1,23 @@
+.product {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+.product__img {
+  order: -1;
+  align-self: center;
+
+  width: 155px;
+  height: 133px;
+  object-fit: contain;
+}
+
+.product__name {
+  margin: 20px 0 0;
+  font-size: 14px;
+}

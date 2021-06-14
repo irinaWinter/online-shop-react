@@ -1,0 +1,32 @@
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+@media (min-width: $tablet-width) {
+  .container {
+    padding: 0 24px;
+    max-width: $tablet-width - 48px;
+  }
+}
+
+@media (min-width: $desktop-width-sm) {
+  .container {
+    padding: 0 50px;
+    max-width: $desktop-width-sm - 100px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .container {
+    max-width: $desktop-width - 100px;
+  }
+}
+
+@media (min-width: $desktop-width-lg) {
+  .container {
+    max-width: $desktop-width-lg - 100px;
+  }
+}

@@ -1,0 +1,27 @@
+.link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  color: $accent;
+
+  &::after {
+    content: "";
+
+    width: 10px;
+    height: 10px;
+
+    background-image: url("../../img/icon/arrow-link.svg");
+    background-size: contain;
+  }
+}
