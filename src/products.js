@@ -7,6 +7,8 @@ export default [
     rating: [4, 5, 3, 5],
     isFavorite: true,
     img: "img/cucumber.jpg",
+    id: "p1",
+    inCart: false,
   },
   {
     name: "Лук репчатый",
@@ -16,6 +18,8 @@ export default [
     rating: [5, 1, 2],
     isFavorite: false,
     img: "img/onion.jpg",
+    id: "p2",
+    inCart: false,
   },
   {
     name: "Шампиньоны",
@@ -25,6 +29,8 @@ export default [
     rating: [3, 2, 1],
     isFavorite: true,
     img: "img/champignons.jpg",
+    id: "p3",
+    inCart: false,
   },
   {
     name: "Апельсины",
@@ -34,6 +40,8 @@ export default [
     rating: [5, 4, 5],
     isFavorite: true,
     img: "img/oranges.jpg",
+    id: "p4",
+    inCart: false,
   },
   {
     name: "Нектарины",
@@ -43,6 +51,8 @@ export default [
     rating: [5, 5, 4],
     isFavorite: true,
     img: "img/nectarines.jpg",
+    id: "p5",
+    inCart: true,
   },
   {
     name: "Помидоры",
@@ -52,5 +62,7 @@ export default [
     rating: [5, 5, 5],
     isFavorite: true,
     img: "img/tomatoes.jpg",
+    id: "p6",
+    inCart: false,
   },
 ];

@@ -21,3 +21,9 @@
   margin: 20px 0 0;
   font-size: 14px;
 }
+
+.product__is-favorite {
+  &--true {
+    background-color: tomato;
+  }
+}

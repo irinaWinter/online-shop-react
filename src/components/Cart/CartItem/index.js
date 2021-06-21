@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import "./index.scss";
 
-export default class Product extends Component {
+export default class CartItem extends Component {
   render() {
     const {
       name,
       img,
       price,
-      rating,
-      onToggleIsFavorite,
       isFavorite,
-      addToCart,
-      inCart,
+      rating,
+      deleteFromCart,
+      onToggleIsFavorite,
     } = this.props;
 
     let classNames = "product__is-favorite";
@@ -32,13 +31,12 @@ export default class Product extends Component {
         </div>
         <p className="product__name">{name}</p>
         <img className="product__img" src={img} alt={name} />
-        <p className="product__price">{price} ₽</p>
+        <p className="product__price">{price}</p>
         <button
-          className="product__button button button--cart"
-          onClick={addToCart}
-          disabled={inCart}
+          className="product__button button button--delete"
+          onClick={deleteFromCart}
         >
-          {inCart ? "В корзине" : "Купить"}
+          Удалить
         </button>
       </li>
     );

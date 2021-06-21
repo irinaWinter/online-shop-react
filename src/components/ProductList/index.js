@@ -4,9 +4,16 @@ import Product from "../Product";
 
 import "./index.scss";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, onToggleIsFavorite, addToCart }) => {
   const product = products.map((product) => {
-    return <Product {...product} />;
+    return (
+      <Product
+        {...product}
+        onToggleIsFavorite={() => onToggleIsFavorite(product.id)}
+        addToCart={() => addToCart(product.id)}
+        key={`${product.id}`}
+      />
+    );
   });
 
   return (

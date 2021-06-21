@@ -18,6 +18,11 @@
   border-radius: 6px;
   outline: none;
 
+  &:disabled {
+    background-color: #c0c0c0;
+    cursor: auto;
+  }
+
   &--cart {
     position: relative;
 
@@ -30,7 +35,7 @@
     }
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     background-color: $accent-hover;
   }
 }
