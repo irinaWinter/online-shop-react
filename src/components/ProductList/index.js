@@ -1,10 +1,12 @@
 import React from "react";
 
 import Product from "../Product";
+import NoResults from "../NoResults";
+import ProductFilter from "../ProductFilter";
 
 import "./index.scss";
 
-const ProductList = ({ products, onToggleIsFavorite, addToCart }) => {
+const ProductList = ({ products, onToggleIsFavorite, addToCart, request }) => {
   const product = products.map((product) => {
     return (
       <Product
@@ -15,6 +17,8 @@ const ProductList = ({ products, onToggleIsFavorite, addToCart }) => {
       />
     );
   });
+
+  const productList = <ul className="product-list__list">{product}</ul>;
 
   return (
     <header className="product-list">
@@ -27,7 +31,8 @@ const ProductList = ({ products, onToggleIsFavorite, addToCart }) => {
             Смотреть все товары
           </button>
         </div>
-        <ul className="product-list__list">{product}</ul>
+        <ProductFilter />
+        {products.length ? productList : <NoResults request={request} />}
       </div>
     </header>
   );

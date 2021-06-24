@@ -7,7 +7,6 @@ import products from "./products";
 
 import AppHeader from "./components/AppHeader";
 import ProductList from "./components/ProductList";
-import ProductFilter from "./components/ProductFilter";
 import Cart from "./components/Cart";
 
 export default class App extends Component {
@@ -15,6 +14,7 @@ export default class App extends Component {
 
   state = {
     products,
+    request: "",
   };
 
   deleteFromCart = (id) => {
@@ -74,18 +74,36 @@ export default class App extends Component {
     });
   };
 
+  onSearchChange = (request) => {
+    this.setState({ request });
+  };
+
+  search(products, request) {
+    if (request.length === 0) {
+      return products;
+    }
+
+    return products.filter((item) => {
+      return item.name.toLowerCase().indexOf(request.toLowerCase()) > -1;
+    });
+  }
+
   render() {
+    const { products, request } = this.state;
+
+    const visibleProducts = this.search(products, request);
+
     return (
       <div>
-        <AppHeader />
         <Cart
-          products={this.state.products}
+          products={products}
           deleteFromCart={this.deleteFromCart}
           onToggleIsFavorite={this.onToggleIsFavorite}
         />
-        <ProductFilter />
+        <AppHeader onSearchChange={this.onSearchChange} />
         <ProductList
-          products={this.state.products}
+          products={visibleProducts}
+          request={request}
           onToggleIsFavorite={this.onToggleIsFavorite}
           addToCart={this.addToCart}
         />

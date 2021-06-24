@@ -1,3 +1,10 @@
+import cucumberImg from "./assets/img/cucumber.jpg";
+import onionImg from "./assets/img/onion.jpg";
+import champignonsImg from "./assets/img/champignons.jpg";
+import orangesImg from "./assets/img/oranges.jpg";
+import nectarinesImg from "./assets/img/nectarines.jpg";
+import tomatoesImg from "./assets/img/tomatoes.jpg";
+
 export default [
   {
     name: "Огурцы",
@@ -6,7 +13,7 @@ export default [
     discount: 60,
     rating: [4, 5, 3, 5],
     isFavorite: true,
-    img: "img/cucumber.jpg",
+    img: cucumberImg,
     id: "p1",
     inCart: false,
   },
@@ -17,7 +24,7 @@ export default [
     discount: 0,
     rating: [5, 1, 2],
     isFavorite: false,
-    img: "img/onion.jpg",
+    img: onionImg,
     id: "p2",
     inCart: false,
   },
@@ -27,8 +34,8 @@ export default [
     price: 239.9,
     discount: 0,
     rating: [3, 2, 1],
-    isFavorite: true,
-    img: "img/champignons.jpg",
+    isFavorite: false,
+    img: champignonsImg,
     id: "p3",
     inCart: false,
   },
@@ -38,8 +45,8 @@ export default [
     price: 94.9,
     discount: 0,
     rating: [5, 4, 5],
-    isFavorite: true,
-    img: "img/oranges.jpg",
+    isFavorite: false,
+    img: orangesImg,
     id: "p4",
     inCart: false,
   },
@@ -49,10 +56,10 @@ export default [
     price: 249.9,
     discount: 20,
     rating: [5, 5, 4],
-    isFavorite: true,
-    img: "img/nectarines.jpg",
+    isFavorite: false,
+    img: nectarinesImg,
     id: "p5",
-    inCart: true,
+    inCart: false,
   },
   {
     name: "Помидоры",
@@ -60,8 +67,8 @@ export default [
     price: 169.9,
     discount: 0,
     rating: [5, 5, 5],
-    isFavorite: true,
-    img: "img/tomatoes.jpg",
+    isFavorite: false,
+    img: tomatoesImg,
     id: "p6",
     inCart: false,
   },

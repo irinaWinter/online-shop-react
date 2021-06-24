@@ -29,6 +29,7 @@ const Cart = ({ products, deleteFromCart, onToggleIsFavorite, isFavorite }) => {
             </span>
           </h2>
         </div>
+        <p>Временно. Будет на отдельной странице.</p>
         <ul className="product-list__list">{product}</ul>
       </div>
     </header>

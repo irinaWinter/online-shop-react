@@ -1,0 +1,14 @@
+.page-header {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    padding: 5px;
+
+    border-radius: 6px;
+
+    background-color: #043e44;
+  }
+}

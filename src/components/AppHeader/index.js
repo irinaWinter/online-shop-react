@@ -1,13 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
+import "./index.scss";
+import Search from "../Search";
 
-const AppHeader = () => {
-  return (
-    <header className="page-header">
-      <div className="page-header__container container">
-        <h1>Здесь будет навигация</h1>
-      </div>
-    </header>
-  );
-};
+export default class AppHeader extends Component {
+  render() {
+    const { onSearchChange } = this.props;
 
-export default AppHeader;
+    return (
+      <header className="page-header">
+        <div className="page-header__container container">
+          <div className="page-header__wrapper">
+            <Search onSearchChange={onSearchChange} />
+          </div>
+        </div>
+      </header>
+    );
+  }
+}
