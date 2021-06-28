@@ -1,26 +1,32 @@
-import React, { Component, useLayoutEffect } from "react";
+import React, { Component } from "react";
 import "./index.scss";
 
 export default class ProductFilter extends Component {
+  buttons = [
+    { name: "овощи", label: "Овощи" },
+    { name: "фрукты", label: "Фрукты" },
+    { name: "ягоды", label: "Ягоды" },
+    { name: "грибы", label: "Грибы" },
+  ];
+
   render() {
-    return (
-      <ul className="product-filter container">
-        <li className="product-filter__item">
-          <button className="product-filter__button">Овощи</button>
+    const { filter, onFilterChange } = this.props;
+
+    const buttons = this.buttons.map(({ name, label }) => {
+      const isActive = filter === name;
+      const clazz = isActive ? "product-filter__button--active" : "";
+      return (
+        <li className="product-filter__item" key={name}>
+          <button
+            className={`product-filter__button ${clazz}`}
+            onClick={() => onFilterChange(name)}
+          >
+            {label}
+          </button>
         </li>
-        <li className="product-filter__item">
-          <button className="product-filter__button">Фрукты</button>
-        </li>
-        <li className="product-filter__item">
-          <button className="product-filter__button">Ягоды</button>
-        </li>
-        <li className="product-filter__item">
-          <button className="product-filter__button">Грибы</button>
-        </li>
-        <li className="product-filter__item">
-          <button className="product-filter__button">Очистить</button>
-        </li>
-      </ul>
-    );
+      );
+    });
+
+    return <ul className="product-filter">{buttons}</ul>;
   }
 }

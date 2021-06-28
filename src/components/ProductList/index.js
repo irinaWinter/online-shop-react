@@ -6,7 +6,14 @@ import ProductFilter from "../ProductFilter";
 
 import "./index.scss";
 
-const ProductList = ({ products, onToggleIsFavorite, addToCart, request }) => {
+const ProductList = ({
+  products,
+  onToggleIsFavorite,
+  addToCart,
+  request,
+  filter,
+  onFilterChange,
+}) => {
   const product = products.map((product) => {
     return (
       <Product
@@ -31,7 +38,7 @@ const ProductList = ({ products, onToggleIsFavorite, addToCart, request }) => {
             Смотреть все товары
           </button>
         </div>
-        <ProductFilter />
+        <ProductFilter filter={filter} onFilterChange={onFilterChange} />
         {products.length ? productList : <NoResults request={request} />}
       </div>
     </header>

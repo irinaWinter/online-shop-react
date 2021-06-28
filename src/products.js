@@ -8,7 +8,7 @@ import tomatoesImg from "./assets/img/tomatoes.jpg";
 export default [
   {
     name: "Огурцы",
-    category: "Овощи",
+    category: "овощи",
     price: 239.9,
     discount: 60,
     rating: [4, 5, 3, 5],
@@ -19,7 +19,7 @@ export default [
   },
   {
     name: "Лук репчатый",
-    category: "Овощи",
+    category: "овощи",
     price: 54.9,
     discount: 0,
     rating: [5, 1, 2],
@@ -30,7 +30,7 @@ export default [
   },
   {
     name: "Шампиньоны",
-    category: "Грибы",
+    category: "грибы",
     price: 239.9,
     discount: 0,
     rating: [3, 2, 1],
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: "Апельсины",
-    category: "Фрукты",
+    category: "фрукты",
     price: 94.9,
     discount: 0,
     rating: [5, 4, 5],
@@ -52,7 +52,7 @@ export default [
   },
   {
     name: "Нектарины",
-    category: "Фрукты",
+    category: "фрукты",
     price: 249.9,
     discount: 20,
     rating: [5, 5, 4],
@@ -63,7 +63,7 @@ export default [
   },
   {
     name: "Помидоры",
-    category: "Овощи",
+    category: "овощи",
     price: 169.9,
     discount: 0,
     rating: [5, 5, 5],

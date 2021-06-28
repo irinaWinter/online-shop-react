@@ -15,6 +15,7 @@ export default class App extends Component {
   state = {
     products,
     request: "",
+    filter: "",
   };
 
   deleteFromCart = (id) => {
@@ -78,6 +79,19 @@ export default class App extends Component {
     this.setState({ request });
   };
 
+  onFilterChange = (filter) => {
+    if (filter === this.state.filter) {
+      this.setState(() => {
+        const all = "";
+        return {
+          filter: all,
+        };
+      });
+    } else {
+      this.setState({ filter });
+    }
+  };
+
   search(products, request) {
     if (request.length === 0) {
       return products;
@@ -88,10 +102,25 @@ export default class App extends Component {
     });
   }
 
-  render() {
-    const { products, request } = this.state;
+  filter(products, filter) {
+    switch (filter) {
+      case "фрукты":
+        return products.filter((item) => item.category === "фрукты");
+      case "овощи":
+        return products.filter((item) => item.category === "овощи");
+      case "ягоды":
+        return products.filter((item) => item.category === "ягоды");
+      case "грибы":
+        return products.filter((item) => item.category === "грибы");
+      default:
+        return products;
+    }
+  }
 
-    const visibleProducts = this.search(products, request);
+  render() {
+    const { products, request, filter } = this.state;
+
+    const visibleProducts = this.filter(this.search(products, request), filter);
 
     return (
       <div>
@@ -106,6 +135,8 @@ export default class App extends Component {
           request={request}
           onToggleIsFavorite={this.onToggleIsFavorite}
           addToCart={this.addToCart}
+          filter={filter}
+          onFilterChange={this.onFilterChange}
         />
       </div>
     );
