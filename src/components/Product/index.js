@@ -22,7 +22,7 @@ export default class Product extends Component {
     }
 
     return (
-      <li className="product-list__product product">
+      <li className="product">
         <div className="product__info-box">
           <p className="product__rating">
             Рейтинг:

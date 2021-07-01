@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 
 import "./index.scss";
 
-const Cart = ({ products, deleteFromCart, onToggleIsFavorite, isFavorite }) => {
+const Cart = ({ products, deleteFromCart, onToggleIsFavorite }) => {
   const product = products
     .filter((item) => item.inCart)
     .map((product) => {

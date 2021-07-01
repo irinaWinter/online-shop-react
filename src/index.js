@@ -137,6 +137,7 @@ export default class App extends Component {
           addToCart={this.addToCart}
           filter={filter}
           onFilterChange={this.onFilterChange}
+          showInfo={this.showInfo}
         />
       </div>
     );
