@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.085296c3.chunk.css",
-    "main.js": "./static/js/main.b279a577.chunk.js",
-    "main.js.map": "./static/js/main.b279a577.chunk.js.map",
+    "main.css": "./static/css/main.04e55b61.chunk.css",
+    "main.js": "./static/js/main.2259d6b1.chunk.js",
+    "main.js.map": "./static/js/main.2259d6b1.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.dcbd8be6.js",
     "runtime-main.js.map": "./static/js/runtime-main.dcbd8be6.js.map",
-    "static/js/2.7958f1b9.chunk.js": "./static/js/2.7958f1b9.chunk.js",
-    "static/js/2.7958f1b9.chunk.js.map": "./static/js/2.7958f1b9.chunk.js.map",
+    "static/js/2.190233fe.chunk.js": "./static/js/2.190233fe.chunk.js",
+    "static/js/2.190233fe.chunk.js.map": "./static/js/2.190233fe.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.085296c3.chunk.css.map": "./static/css/main.085296c3.chunk.css.map",
-    "static/js/2.7958f1b9.chunk.js.LICENSE.txt": "./static/js/2.7958f1b9.chunk.js.LICENSE.txt",
-    "static/media/styles.scss": "./static/media/arrow-link.f00a1689.svg",
-    "static/media/cart.0bd41c44.svg": "./static/media/cart.0bd41c44.svg",
+    "static/css/main.04e55b61.chunk.css.map": "./static/css/main.04e55b61.chunk.css.map",
+    "static/js/2.190233fe.chunk.js.LICENSE.txt": "./static/js/2.190233fe.chunk.js.LICENSE.txt",
+    "static/media/styles.scss": "./static/media/arrow-link.c06853c8.svg",
+    "static/media/cart.b1df3171.svg": "./static/media/cart.b1df3171.svg",
     "static/media/champignons.c4d018b0.jpg": "./static/media/champignons.c4d018b0.jpg",
     "static/media/cucumber.994dd5fd.jpg": "./static/media/cucumber.994dd5fd.jpg",
     "static/media/is-favorite.7c2bf8cd.svg": "./static/media/is-favorite.7c2bf8cd.svg",
-    "static/media/loupe.2c4729e6.svg": "./static/media/loupe.2c4729e6.svg",
+    "static/media/loupe.2d88f733.svg": "./static/media/loupe.2d88f733.svg",
     "static/media/nectarines.244980cb.jpg": "./static/media/nectarines.244980cb.jpg",
     "static/media/onion.43361e2a.jpg": "./static/media/onion.43361e2a.jpg",
     "static/media/oranges.e84b11c5.jpg": "./static/media/oranges.e84b11c5.jpg",
@@ -23,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dcbd8be6.js",
-    "static/js/2.7958f1b9.chunk.js",
-    "static/css/main.085296c3.chunk.css",
-    "static/js/main.b279a577.chunk.js"
+    "static/js/2.190233fe.chunk.js",
+    "static/css/main.04e55b61.chunk.css",
+    "static/js/main.2259d6b1.chunk.js"
   ]
 }

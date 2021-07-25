@@ -16,6 +16,17 @@ export default [
     img: cucumberImg,
     id: "p1",
     inCart: false,
+    nutritionalValue: {
+      energyValue: 100,
+      proteins: 20,
+      fats: 30,
+      carbohydrates: 4,
+    },
+    storageConditions: {
+      bestBefore: 5,
+      storageTemperatureMin: 2,
+      storageTemperatureMax: 20,
+    }
   },
   {
     name: "Лук репчатый",
@@ -27,6 +38,17 @@ export default [
     img: onionImg,
     id: "p2",
     inCart: false,
+    nutritionalValue: {
+      energyValue: 200,
+      proteins: 200,
+      fats: 300,
+      carbohydrates: 40,
+    },
+    storageConditions: {
+      bestBefore: 50,
+      storageTemperatureMin: 20,
+      storageTemperatureMax: 200,
+    }
   },
   {
     name: "Шампиньоны",
@@ -38,6 +60,17 @@ export default [
     img: champignonsImg,
     id: "p3",
     inCart: false,
+    nutritionalValue: {
+      energyValue: 500,
+      proteins: 26,
+      fats: 24,
+      carbohydrates: 456,
+    },
+    storageConditions: {
+      bestBefore: 23,
+      storageTemperatureMin: -1,
+      storageTemperatureMax: 34,
+    }
   },
   {
     name: "Апельсины",
@@ -49,6 +82,17 @@ export default [
     img: orangesImg,
     id: "p4",
     inCart: false,
+    nutritionalValue: {
+      energyValue: 140,
+      proteins: 45,
+      fats: 34,
+      carbohydrates: 5,
+    },
+    storageConditions: {
+      bestBefore: 54,
+      storageTemperatureMin: 12,
+      storageTemperatureMax: 20,
+    }
   },
   {
     name: "Нектарины",
@@ -60,6 +104,17 @@ export default [
     img: nectarinesImg,
     id: "p5",
     inCart: false,
+    nutritionalValue: {
+      energyValue: 100,
+      proteins: 20,
+      fats: 30,
+      carbohydrates: 4,
+    },
+    storageConditions: {
+      bestBefore: 5,
+      storageTemperatureMin: 2,
+      storageTemperatureMax: 20,
+    }
   },
   {
     name: "Помидоры",
@@ -71,5 +126,16 @@ export default [
     img: tomatoesImg,
     id: "p6",
     inCart: false,
+    nutritionalValue: {
+      energyValue: 100,
+      proteins: 20,
+      fats: 30,
+      carbohydrates: 4,
+    },
+    storageConditions: {
+      bestBefore: 5,
+      storageTemperatureMin: 2,
+      storageTemperatureMax: 20,
+    }
   },
 ];

@@ -14,6 +14,7 @@ export default class Product extends Component {
       isFavorite,
       addToCart,
       inCart,
+      showProductDetails
     } = this.props;
 
     let classNames = "product__is-favorite";
@@ -38,6 +39,7 @@ export default class Product extends Component {
         </div>
         <p className="product__name">{name}</p>
         <img className="product__img" src={img} alt={name} />
+        <button onClick={showProductDetails}>Быстрый просмотр</button>
         <p className="product__price">{price} ₽</p>
         <button
           className="product__button button button--cart"

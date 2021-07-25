@@ -8,6 +8,8 @@ import products from "./products";
 import AppHeader from "./components/AppHeader";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
+import ProductDetails from "./components/ProductDetails";
+
 
 export default class App extends Component {
   maxId = 100;
@@ -16,6 +18,7 @@ export default class App extends Component {
     products,
     request: "",
     filter: "",
+    details: null,
   };
 
   deleteFromCart = (id) => {
@@ -117,8 +120,26 @@ export default class App extends Component {
     }
   }
 
+  showProductDetails = (id) => {
+    this.setState(({ products }) => {
+      const idx = products.findIndex((el) => el.id === id);
+
+      return {
+        details: products[idx],
+      };
+    });
+  };
+
+  closeProductDetails() {
+    this.setState(() => {
+      return {
+        details: null,
+      };
+    });
+  }
+
   render() {
-    const { products, request, filter } = this.state;
+    const { products, request, filter, details } = this.state;
 
     const visibleProducts = this.filter(this.search(products, request), filter);
 
@@ -137,8 +158,9 @@ export default class App extends Component {
           addToCart={this.addToCart}
           filter={filter}
           onFilterChange={this.onFilterChange}
-          showInfo={this.showInfo}
+          showProductDetails={this.showProductDetails}
         />
+        <ProductDetails details={details} closeProductDetails={() => this.closeProductDetails()} />
       </div>
     );
   }

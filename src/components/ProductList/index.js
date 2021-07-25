@@ -12,16 +12,20 @@ const ProductList = ({
   addToCart,
   request,
   filter,
+  showProductDetails,
   onFilterChange,
 }) => {
   const product = products.map((product) => {
     return (
-      <Product
-        {...product}
-        onToggleIsFavorite={() => onToggleIsFavorite(product.id)}
-        addToCart={() => addToCart(product.id)}
-        key={`${product.id}`}
-      />
+      <div>
+        <Product
+          {...product}
+          onToggleIsFavorite={() => onToggleIsFavorite(product.id)}
+          addToCart={() => addToCart(product.id)}
+          key={`${product.id}`}
+          showProductDetails={() => showProductDetails(product.id)}
+        />
+      </div>
     );
   });
 
