@@ -1,0 +1,38 @@
+.quick-view {
+  position: absolute;
+  
+  z-index: 1;
+
+  top: 105px;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 48px;
+
+  border: none;
+
+  outline: none;
+
+  background: hsla(0,0%,100%,.85);
+  
+  opacity: 0;
+  
+  visibility: hidden;
+  
+  cursor: pointer;
+  
+  transition: opacity .5s ease,visibility .5s ease,color .5s ease;
+
+  font-size: 11px;
+  line-height: 24px;
+  color: #919fa7;
+  text-align: center;
+
+  &:hover {
+    color: #7ac143;
+  }
+}

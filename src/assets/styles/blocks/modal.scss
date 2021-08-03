@@ -3,7 +3,7 @@
 
   display: flex;
 
-  padding: 20px;
+  padding: 20px 0;
 
   width: 752px;
   height: 100%;
@@ -64,14 +64,30 @@
   }
 
   &__img {
+    flex-shrink: 0;
+    padding: 0 20px;
     width: 50%;
     height: 100%;
     object-fit: contain;
   }
 
   &__text-box {
-    flex-shrink: 0;
-    padding-right: 50px;
+    max-height: 558px;
+    overflow: auto;
+
+    padding: 0 70px 0 0;
+
+    scrollbar-color: $accent-hover #E0E0E0;    
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #E0E0E0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent-hover;
+    }
   }
 
   &__title {

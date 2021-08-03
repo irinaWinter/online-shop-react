@@ -16,14 +16,14 @@ export default class ProductDetails extends Component {
             <div className="modal-overlay">
               <div className="modal">
                 <button className="modal__close" onClick={closeProductDetails}>Закрыть</button>
-                <img className="modal__img" src={details.img} alt={details.name} />
+                <img className="modal__img" src={details.image} alt={details.title} />
                 <div className="modal__text-box">
-                  <h2 className="modal__title">{details.name}</h2>
-                  <p className="modal__rating">Рейтинг:&nbsp;
-                    {(details.rating.reduce((a, b) => a + b) / details.rating.length).toFixed(1)}
+                  <h2 className="modal__title">{details.title}</h2>
+                  <p className="modal__rating">Категория:&nbsp;
+                    {details.category}
                   </p>
                   <p className="modal__price">{details.price}&nbsp;₽</p>
-                  <p>Здесь будет детальное описание</p>
+                  <p>{details.description}</p>
                 </div>
               </div>
             </div>

@@ -3,80 +3,37 @@ import ReactDOM from "react-dom";
 
 import "./assets/styles/styles.scss";
 
-import products from "./products";
-
 import AppHeader from "./components/AppHeader";
 import ProductList from "./components/ProductList";
-import Cart from "./components/Cart";
 import ProductDetails from "./components/ProductDetails";
-
+import FakestoreapiService from './services/fakestoreapi-service';
+import ProductFilter from "./components/ProductFilter";
+import Spinner from "./components/Spinner";
 
 export default class App extends Component {
-  maxId = 100;
+  fakestoreapiService = new FakestoreapiService();
 
   state = {
-    products,
+    products: null,
     request: "",
     filter: "",
     details: null,
+    loading: true
   };
 
-  deleteFromCart = (id) => {
-    this.setState(({ products }) => {
-      const idx = products.findIndex((el) => el.id === id);
+  componentDidMount() {
+    this.loadProducts();
+  }
 
-      const oldProduct = products[idx];
-      const newProduct = { ...oldProduct, inCart: !oldProduct.inCart };
+  onProductsLoaded = (products) => {
+    this.setState({ products, loading: false })
+  }
 
-      const newArray = [
-        ...products.slice(0, idx),
-        newProduct,
-        ...products.slice(idx + 1),
-      ];
-
-      return {
-        products: newArray,
-      };
-    });
-  };
-
-  addToCart = (id) => {
-    this.setState(({ products }) => {
-      const idx = products.findIndex((el) => el.id === id);
-
-      const oldProduct = products[idx];
-      const newProduct = { ...oldProduct, inCart: !oldProduct.inCart };
-
-      const newArray = [
-        ...products.slice(0, idx),
-        newProduct,
-        ...products.slice(idx + 1),
-      ];
-
-      return {
-        products: newArray,
-      };
-    });
-  };
-
-  onToggleIsFavorite = (id) => {
-    this.setState(({ products }) => {
-      const idx = products.findIndex((el) => el.id === id);
-
-      const oldProduct = products[idx];
-      const newProduct = { ...oldProduct, isFavorite: !oldProduct.isFavorite };
-
-      const newArray = [
-        ...products.slice(0, idx),
-        newProduct,
-        ...products.slice(idx + 1),
-      ];
-
-      return {
-        products: newArray,
-      };
-    });
-  };
+  loadProducts() {
+    this.fakestoreapiService
+      .getProducts()
+      .then(this.onProductsLoaded)
+  }
 
   onSearchChange = (request) => {
     this.setState({ request });
@@ -101,20 +58,20 @@ export default class App extends Component {
     }
 
     return products.filter((item) => {
-      return item.name.toLowerCase().indexOf(request.toLowerCase()) > -1;
+      return item.title.toLowerCase().indexOf(request.toLowerCase()) > -1;
     });
   }
 
   filter(products, filter) {
     switch (filter) {
-      case "фрукты":
-        return products.filter((item) => item.category === "фрукты");
-      case "овощи":
-        return products.filter((item) => item.category === "овощи");
-      case "ягоды":
-        return products.filter((item) => item.category === "ягоды");
-      case "грибы":
-        return products.filter((item) => item.category === "грибы");
+      case "men's clothing":
+        return products.filter((item) => item.category === "men's clothing");
+      case "jewelery":
+        return products.filter((item) => item.category === "jewelery");
+      case "electronics":
+        return products.filter((item) => item.category === "electronics");
+      case "women's clothing":
+        return products.filter((item) => item.category === "women's clothing");
       default:
         return products;
     }
@@ -139,28 +96,26 @@ export default class App extends Component {
   }
 
   render() {
-    const { products, request, filter, details } = this.state;
+    const { products, request, filter, details, loading } = this.state;
 
     const visibleProducts = this.filter(this.search(products, request), filter);
 
+    const productList = <React.Fragment>
+      <ProductList
+        products={visibleProducts}
+        request={request}
+        showProductDetails={this.showProductDetails}
+      />
+      <ProductDetails details={details} closeProductDetails={() => this.closeProductDetails()} />
+    </React.Fragment>
+
+    const content = loading && !products ?  <Spinner /> : productList;
+
     return (
       <div>
-        <Cart
-          products={products}
-          deleteFromCart={this.deleteFromCart}
-          onToggleIsFavorite={this.onToggleIsFavorite}
-        />
         <AppHeader onSearchChange={this.onSearchChange} />
-        <ProductList
-          products={visibleProducts}
-          request={request}
-          onToggleIsFavorite={this.onToggleIsFavorite}
-          addToCart={this.addToCart}
-          filter={filter}
-          onFilterChange={this.onFilterChange}
-          showProductDetails={this.showProductDetails}
-        />
-        <ProductDetails details={details} closeProductDetails={() => this.closeProductDetails()} />
+        <ProductFilter filter={filter} onFilterChange={this.onFilterChange} />
+        {content}
       </div>
     );
   }

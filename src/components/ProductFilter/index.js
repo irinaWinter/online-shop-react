@@ -3,10 +3,10 @@ import "./index.scss";
 
 export default class ProductFilter extends Component {
   buttons = [
-    { name: "овощи", label: "Овощи" },
-    { name: "фрукты", label: "Фрукты" },
-    { name: "ягоды", label: "Ягоды" },
-    { name: "грибы", label: "Грибы" },
+    { name: "men's clothing", label: "Мужская одежда" },
+    { name: "jewelery", label: "Украшения" },
+    { name: "electronics", label: "Электроника" },
+    { name: "women's clothing", label: "Женская одежда" },
   ];
 
   render() {
@@ -27,6 +27,14 @@ export default class ProductFilter extends Component {
       );
     });
 
-    return <ul className="product-filter">{buttons}</ul>;
+    return (
+      <section className="product-filter">
+        <div className="product-filter__container container">
+          <h2 className="visually-hidden">Фильтры</h2>
+          <ul className="product-filter__list">{buttons}</ul>
+        </div>
+      </section>
+    )
+    
   }
 }

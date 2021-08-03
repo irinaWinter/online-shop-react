@@ -1,4 +1,6 @@
 .product {
+  position: relative;
+
   display: flex;
   flex-direction: column;
 
@@ -6,6 +8,13 @@
 
   border-radius: 20px;
   border: 1px solid #e5e5e5;
+
+  &:hover {
+    .product__quick-view {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 
   &__img {
     order: -1;
@@ -21,20 +30,7 @@
     font-size: 14px;
   }
 
-  &__is-favorite {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background-color: #e5e5e5;
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &--true {
-      background-color: #ff6347;
-    }
+  &__button {
+    margin-top: auto;
   }
 }
